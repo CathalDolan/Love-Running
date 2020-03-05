@@ -1,0 +1,563 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300|Oswald&display=swap'); 
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    font-family: lato;
+    color: #777777;
+}
+
+h1, h2{
+    font-family: 'Oswald';
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #555555;
+}
+
+/*========================================================= Navbar Start ======================================================*/
+
+#logo {
+    float: left;
+    font-size: 280%;
+    margin-left: 0.75em;
+}
+
+#menu {
+  font-size: 110%;
+  list-style-type: none;
+  letter-spacing: 4px;
+  float: right; /* this combined with "float left" in "#menu li" is what reverses the order of the navigation menu. How? */
+}
+
+#logo, #menu {
+    line-height: 75px; /*--This centres both elements vertically. Why when I use % or em's does it not work properly?--*/
+}
+
+#menu li {
+    float: left;
+    margin-right: 30px;
+}
+
+#menu a {
+    text-decoration: none; /*--Why does this have to be here, why doesn't it work when in "#menu li" above?--*/
+    color: inherit;
+}
+
+#menu a:hover {
+    border-bottom: 1px solid #777777; /*--I added "border: 1px 0px 1px 0px" to get a border top and bottom but got none at all, why?--*/
+}
+
+.active {
+   border-bottom: 1px solid #777777; 
+}
+
+/*=== Navbar End ===*/
+
+
+/*================================================ Footer Start ===============================================================*/
+
+footer {
+    height: 100px; /*-- If I remove this, nothing changes, why? What's setting the footer height? --*/
+}
+
+#footer_list {
+    text-align: center;
+}
+
+#footer_list li {
+    display: inline;
+}
+
+#footer_list i {
+    font-size: 200%;
+    margin: 1%;
+    padding: 2.5%; /*-- this appears to centre the icons vertically. WHy does it? How else could I do it? --*/
+    color: #777777;
+}
+
+/*=== Footer End ===*/
+
+
+/*==================================================== Home Page Start ===========================================================*/
+
+/*---Hero Image Start--*/
+
+#hero_image {
+    Height: 600px;
+    width: 100%;
+    background: url(/assets/images/love_running_main_image.png) no-repeat center center; /*--Why when I use "background-image do the "no-repeat" and "center" make it disappear?--*/
+
+    animation-name: hero_zoom;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+#hero_outer {
+    Height: 600px;
+    width: 100%;
+    overflow: hidden; /*-- What's happening here to push the image below the Header? "clear: both;" will also work here. --*/
+    position: relative; /*-- This is required to put the "#cover_text" in the right place and works with "position: absolute" there. I don't understand this --*/
+}
+
+@keyframes hero_zoom { /*-- "hero-zoom" is an arbiotrary name I selected. It's required to ID the zoom--*/
+    from {transform: scale(1)}
+    to {transform: scale(1.1)}
+}
+
+#cover_text, #cover_text h2 { /*--Why is "cover_text" in there twice? works fine without middle one. Tutorial had both--*/
+    color:#ffffff;
+}
+
+#cover_text {
+    font-size: 130%; /*-- 130% of what?--*/
+    font-family: "oswald";
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    /*-- "color: white;" why doesn't this work instead of "#cover_text, cover_text, h2" above?--*/
+
+    width: 300px;
+    height: 200px;
+
+    padding-top: 40px;
+    padding-left: 10px; 
+
+    background-color: rgba(241, 109, 107, .7);
+
+    bottom: 30px; /*-- This is exactly as per the tutorial, but result is different. Only top of div covers the hero image and it's fixed in place--*/
+    right: 150px;
+    position: absolute; /*--This is what puts the code to the front of Z axis and is related to the immediately previous note--*/
+}
+
+/*-- Hero Image End --*/
+
+/*-- Why Run Section Start --*/
+
+#welcome {
+    text-align: center;
+    font-size: 280%;
+    padding-top: 3%;
+    padding-bottom: 1%;
+    line-height: 100%; /*-- The idea of this was to remove the space around the text. It doesn't fully work. 0 didn't work at all! --*/
+}
+
+#club_ethos {
+    max-height: 600px; /*-- Design: Tutorial set this to 600 to match hero image, but was too much white space below --*/
+}
+
+#club_ethos > hr {
+    border-top: 2px solid #777777;
+    width: 25%;
+    margin: 0 auto;
+}
+
+hr {
+    border-top: 1px solid #777777;
+    width: 100%;
+    margin: 5px 0;
+}
+
+#ethos_columns {
+    padding-top: 2%;
+    padding-bottom: 0%;
+}
+
+.material-icons {
+    font-size: 30px; /*-- This is to try and make the fonts the same size as the h2's. Why do I need to do this? --*/
+    vertical-align: middle; /*-- This isn't exactly centering them, why? --*/
+}
+
+#left_about {
+    padding-top: 10px;
+    width: 33%;
+    float: left;
+}
+
+#right_about {
+    padding-top: 10px;
+    width: 33%;
+    float: right;
+}
+
+#centre_about { /*-- Note that this is listed last of the three --*/
+    /*--padding-top: 30px;  This has no affect, why? --*/
+    width: 33%;
+    margin: 0 auto;
+    padding-top: 0%;
+    padding-bottom: 3%;
+    vertical-align: middle; /*-- Why doesn't this work? I want the central section centred vertically between left and right headings --*/
+}
+
+.left_about_heading, .right_about_heading {
+    width: 50%;
+    line-height: 20px;
+    clear: both; /*-- This allows us to ensure each block is aligned vertically within the parent div. How does this work?--*/
+    margin-bottom: 50px;
+}
+
+.left_about_heading {
+    float: right; /*-- Allows the content to align to the photo in "centre_about"--*/
+}
+
+.right_about_heading {
+    float: left;
+    text-align: right;
+}
+
+#circle_container {
+    height: 300px;
+    width: 300px;
+    padding: 30px; /*-- Is this what centred the #circle_bg_cover image inside it? Where is the white colour coming from? --*/
+    border: 1px solid #cccccc;
+    border-radius: 50%;
+    margin: 0px auto;
+}
+
+#circle_bg_cover {
+    background: url(http://codeinstitute.s3.amazonaws.com/FundamentalsProjects/HTML-CSS/video-mask.png) no-repeat center center;
+    height: 100%;
+    width: 100%; /*-- Is this required? --*/
+    border-radius: 50%;
+}
+
+/*-- Why Run Section End --*/
+
+
+/*-- Running Times Start --*/
+
+#times {
+    background-image: url(http://codeinstitute.s3.amazonaws.com/FundamentalsProjects/HTML-CSS/dublin-city.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;  /*-- This is cropping the image width which I don't want, but height I do. How to fix? And how to centre on X-axis? --*/
+    height: 250px;
+    width: 100%;
+    overflow: hidden;
+}
+
+#times div {
+    color: #fafafa;
+    background-color: rgba(0, 0, 0, .6);
+    width: 19%;
+    height: 92.5%; /*-- Why is this not 99%? When it is, it doesn't fit. In addition, it seems to vary by screen size --*/
+    margin: 0.5%; /*--this is at odds with the tutorial, but I used % instead of pixels because it's more responsive --*/
+    float: left;
+    text-align: center;
+    vertical-align: middle; /*-- Why is this not centering the text horizontally? --*/
+}
+
+#times h2 {color: #fafafa;}
+
+/*-- Running Times End --*/
+
+
+/*-- Medium Screens Start --*/
+
+@media screen and (max-width: 1393px) {
+    #club_ethos {
+        width: 80%;
+        height: 1200px;
+        margin: 0 auto; /*-- to centre everything --*/
+    }
+    #welcome {
+        padding: 30px 0;
+        margin: 0;
+    }
+
+    #left_about, #right_about {
+        width: 100%;
+        float: left;
+        padding: 0;
+    }
+
+    #centre_about {
+        clear: both;
+        width: 100%; /*-- this didn;t fill the space and was still pushed out to right, creating a right "margin" for everything else, why? --*/
+        float: left; /*-- This pushed it above Times and the Footer, why? --*/
+        padding: 0;
+        margin: 0;
+    }
+
+    #circle_container {
+        margin: 0;
+        padding: 0px; /*-- Only when I remove this padding, does the image centre on mobile but not on tablet, but then there is no white "frame" around it as there should be. 
+        Regardless of amount of padding added, it always looks the same. Why? Also, when I centred the #club_ethos for 943px screen below, it didn't protrude as much, but causes
+        a white line along the right of the screen, and the padding here started to function. Why? --*/
+    }
+
+    #times div {
+        width: 100%;
+        clear: both; /*-- Stacks the divs vertically, but they are not displaying as such --*/
+        height: 150%; /*-- Only the first div is displaying. Is it due to height here? --*/
+        border-style: solid;
+        border-bottom-width: 1px;
+        border-bottom-color: #ffffff;
+        padding: 0;
+    }
+
+    hr {
+        display: none;
+    }
+}
+
+/*-- Medium Screens End --*/
+
+
+/*-- Small Screens Start --*/
+
+@media screen and (max-width: 943px) {
+    #menu {
+        clear: left;
+        float: left;
+        margin-left: 30px;
+        margin-bottom: 20px;
+        line-height: 25px;
+    }
+
+    #cover_text {
+        left: 0px; /*-- Supposed puts the cover text div tight to the left edge, but isn't. Why? --*/
+    }
+
+    #club_ethos {
+        width: 90%;
+        height: 1200px; /*-- I don't see this doing anything. What should happen? --*/
+        margin: 0 auto; /*-- Why doesn't this affect the image position? --*/
+    }
+
+    .left_about_heading, .right_about_heading {
+        width: inherit; /*-- Is "left_about" not the parent of this? It is set at 33%, so why does it fill the screen to 90% of the way like "club_ethos"? --*/
+        /*-- text-align: center;  Why not just add this here instead of repeating it below? --*/
+    }
+
+    .left_about_heading h2, .right_about_heading h2 {
+        width: 100%; /*-- Why does this need to go in? Removing it makes no difference I can see. --*/
+        text-align: center;
+    } 
+
+    .left_about_heading p, .right_about_heading p {
+        /*--  width: 100%; This goes in for the h2's, why not p's too? Distorts balance when it does, why?--*/
+        text-align: center;
+        padding: 0 20px 0 20px;
+    } 
+    #photos {
+        column-count: 3; /*-- This is having no affect --*/
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #photos {
+        column-count: 2; /*-- This is having no affect --*/
+    }
+
+    /*-- #form_section {
+        height: 300px;
+    }
+
+    #signup_form {
+    background-color: rgba(60, 60, 60, 0.6);
+    max-width: 200px; /*-- Why is this set at a maximum as opposed to fixed or minimum? ----*/
+    position: absolute;
+    left: 1%;
+    } /*-- none of this is working, Why> --*/
+}
+
+/*-- Small Screens End --*/
+
+/*=== Home Page End ===*/
+
+
+/*================================================= Gallery Page Start ============================================================*/
+
+#photos {
+    clear: both; /*-- This pushes the photos below the header. Why does it do that? --*/
+    line-height: 0;
+    column-count: 4; /*-- I'm only getting 3 picture columns, and 1 empty, the 4th one. Why? --*/
+    column-gap: 0;
+}
+
+#photos img {
+    width: 100%;
+}
+/*=== Gallery Page End ===*/
+
+
+/*================================================= Sign-Up Page Start ==============================================*/
+
+#form_section {
+    clear: left;
+    background: url("http://codeinstitute.s3.amazonaws.com/FundamentalsProjects/HTML-CSS/formbg.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 900px; /*-- How do I affect this on mobile --*/
+}
+
+#signup_form {
+    margin-top: 15%; /*-- This didn't take affected until "position" added. Why? --*/
+    color: #ffffff;
+    background-color: rgba(60, 60, 60, 0.6);
+    max-width: 400px; /*-- Why is this set at a maximum as opposed to fixed or minimum? If I make it smaller it works on mobile, but Amedia not working for me. --*/
+    position: absolute;
+    left: 10%;
+    padding: 30px; 
+}
+
+#signup_form h2 {
+  color: #fafafa;
+  margin-bottom: 20px;
+}
+
+.text_input {
+    background-color: transparent;
+    color: #fafafa;
+    width: 100%; /*-- Doing this pushed all onto different lines. Is there another way? --*/
+    height: 25px;
+    margin: 5px 0 20px;
+    border: 1px solid #fafafa;
+    border-radius: 2px;
+}
+
+.text_input:hover {
+  border-color: #f16c6b;
+}
+
+#join_button {
+    margin-top: 20px;
+    border-radius: 2px;
+    padding: 15px 32px;
+    text-align: center; /*-- Why is this required, doesn't the left & right padding centre the text by default? */
+    font-size: 100%;
+    background-color: #f16c6b;
+    color: #fafafa;
+    display: block; /*-- Moves it onto the next line --*/
+}
+
+#join_button:hover {
+  background-color: #fafafa;
+  color: #f16c6b;
+}
+
+/*=== Sign-Up Page End ===*/
+
+
+/*============================================== Test Page Start ===================================================*/
+
+/*#test-divs{
+    background-color: red;
+    overflow: hidden;
+}
+
+#test-divs > div {
+    height: 100px;
+    width: 100px;
+    border: solid #555555;
+    color: #ffffff;
+    background-color: blue;
+    text-align: center;
+    float: left;
+}
+
+#test_div2 {
+    background-color: green;
+    height: 50px;
+    text-align: center;
+    color: white;
+}*/
+
+html {
+    background-color: #baf4fc;
+    padding: 0px;
+}
+
+/*-- body {
+    background-color: yellow;
+    height: 900px;
+    width: 100%;
+    margin: 0px 20px;
+    border: 1px solid #555555;
+    z-index: 100; /*-- Why does this have no affect? 
+}--*/
+
+#test_div3 {
+    background-color: blue;
+    min-height: 550px;
+    width: 600px;
+    margin: 0px 30px 0 30px;
+    position: relative;
+    top: 200px;
+    left: 75px;
+}
+
+#test_div4 {
+    background-color: green;
+    min-height: 400px;
+    width: 400px;
+    margin: 20px 0px;
+    border: 1px solid #555555;
+    position: absolute;
+    top: 50px;
+    right: 0px;
+}
+
+header {
+    background-color: greenyellow;
+    margin: 0px 0px;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+}
+
+nav {
+    background-color: #f073e1;
+    font-size: 40px;
+    border: 1px solid #555555;
+}
+
+#test_footer {
+    background-color: #f073e1;
+    font-size: 40px;
+    border: 1px solid #555555;
+}
+
+.list {
+    background-color: orange;
+    border: 1px solid #555555;
+}
+
+#flexey_box {
+    background-color: grey;
+    height: 700px;
+    padding: 10px;
+    display: flex;
+    flex-flow: column wrap; /* This is default. It's a combo of 2 separate properties; flex-direction and flex-wrap --*/
+    align-items: center; 
+    justify-content: center; 
+    /*-- align-content: center; This appears to over-ride "flex-basis" for individual elements --*/
+}
+
+#list_1 {
+}
+
+#list_2 {
+}
+#list_3 {
+    width: 200px;
+    align-self: flex-end;
+}
+#list_4 {
+    height: 150px;
+    width: 150px;
+}
+#list_5 {
+    width: 200px;
+    height: 100px;
+    flex: 0 1 auto; /*-- flex-grow, flex-shrink, flex-basis --*/
+}
+#list_6 {
+    width: 200px;
+    flex: 0 1 100px; /*-- flex-grow, flex-shrink, flex-basis --*/
+}
+
+/*===========================================Test Page End ==============================================*/

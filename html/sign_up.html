@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/assets/css/styles.css" type="text/css">
+    <title>Love Running</title>
+</head>
+<body>
+    <header>
+        <a href="/html/index.html">
+            <h2 id="logo">Love Running</h2>
+        </a>
+        <nav>
+            <ul id="menu">
+                <li><a href="/html/index.html">Home</a></li>
+                <li><a href="/html/gallery.html">Gallery</a></li>
+                <li><a class="active" href="/html/sign_up.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="form_section"> <!-- Does a form treat all elements as being inline? -->
+        <form id="signup_form" action="https://formdump.codeinstitute.net/" method="post">
+            <h2>Let's get you signed up! <i class="material-icons">favorite_border</i></h2>
+     
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" class="text_input" name="first_name" required />
+
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" class="text_input" name="last_name" required />
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" class="text_input" name="email" required />
+
+            <label for="road">Road</label>
+            <input type="radio" id="road" name="running_preference" value="road" />
+            <label for="trail">Trail</label>
+            <input type="radio" id="Trail" name="running_preference" value="trail" />
+            <label for="both">Both</label>
+            <input type="radio" id="both" name="running_preference" value="both" />
+
+            <button type="submit" id="join_button">Let's Run!</button>
+    </div>
+    <footer id="footer">
+        <ul id="footer_list">
+        <li><a href="https://facebook.com" target="_blank"><i class="material-icons">accessibility</i></a></li>
+        <li><a href="https://twitter.com" target="_blank"><i class="material-icons">android</i></a></li>
+        <li><a href="https://bbc.com" target="_blank"><i class="material-icons">card_giftcard</i></a></li>
+        <li><a href="https://three.ie" target="_blank"><i class="material-icons">eco</i></a></li>
+        </ul>
+    </footer>
+</body>
+</html>
