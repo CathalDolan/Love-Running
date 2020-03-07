@@ -444,6 +444,54 @@ hr {
 
 /*============================================== Test Page Start ===================================================*/
 
+/*---Hero Image Start--*/
+
+#hero_image_test {
+    Height: 600px;
+    width: 100%;
+    background: url(https://i.imgur.com/iKPVuhi.jpg) no-repeat center center; /*--Why when I use "background-image do the "no-repeat" and "center" make it disappear?--*/
+
+    animation-name: hero_zoom_test;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+#hero_outer_test {
+    Height: 600px;
+    width: 100%;
+    overflow: hidden; /*-- What's happening here to push the image below the Header? "clear: both;" will also work here. --*/
+    position: relative; /*-- This is required to put the "#cover_text" in the right place and works with "position: absolute" there. I don't understand this --*/
+}
+
+@keyframes hero_zoom_test { /*-- "hero-zoom" is an arbiotrary name I selected. It's required to ID the zoom--*/
+    from {transform: scale(1)}
+    to {transform: scale(1.1)}
+}
+
+#cover_text_test, #cover_text_test h2 { /*--Why is "cover_text" in there twice? works fine without middle one. Tutorial had both--*/
+    color:#ffffff;
+}
+
+#cover_text_test {
+    font-size: 130%; /*-- 130% of what?--*/
+    font-family: "oswald";
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    /*-- "color: white;" why doesn't this work instead of "#cover_text, cover_text, h2" above?--*/
+
+    width: 300px;
+    height: 200px;
+
+    padding-top: 40px;
+    padding-left: 10px; 
+
+    background-color: rgba(241, 109, 107, .7);
+
+    bottom: 30px; /*-- This is exactly as per the tutorial, but result is different. Only top of div covers the hero image and it's fixed in place--*/
+    right: 150px;
+    position: absolute; /*--This is what puts the code to the front of Z axis and is related to the immediately previous note--*/
+}
+
 /*#test-divs{
     background-color: red;
     overflow: hidden;
